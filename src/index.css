@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*Flexbox start*/
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/*Flexbox end*/
+
+/*Grid start*/
+/*body, html {*/
+/*  height: 100%;*/
+/*  margin: 0;*/
+/*}*/
+
+/*.container {*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(3, 1fr);
+/*  gap: 10px;
+/*  height: 100%;*/
+/*}*/
+/*Grid end*/
