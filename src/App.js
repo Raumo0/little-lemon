@@ -1,19 +1,20 @@
 import './App.css';
 import {Header} from "./Header";
-import {Navigation} from "./Navigation";
 import {Footer} from "./Footer";
 import {Main} from "./Main";
+import {BrowserRouter as Router} from 'react-router-dom';
 
 function App() {
     return (
-        // <div className="App"> className="container"??
-        <>
-            <Header/>
-            <Navigation/>
-            <Main/>
-            <Footer/>
-        </>
-        // </div>
+        <Router>
+            // <div className="App"> className="container"??
+            <>
+                <Header/>
+                <Main/>
+                <Footer/>
+            </>
+            // </div>
+        </Router>
     );
 }
 
