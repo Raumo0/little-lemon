@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {updateTimes} from "../utils/fakeApi";
 
 function BookingForm(props) {
     const [date, setDate] = useState('');
@@ -6,18 +7,21 @@ function BookingForm(props) {
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('');
 
-    const handleDateChange = (event) => {
-        props.dispatch({ type: 'UPDATE_TIMES', payload: event.target.value });
+    const handleDateChange = async (event) => {
+        const newDate = new Date(event.target.value);
+        const updatedTimes = await updateTimes(newDate);
+        props.dispatch({type: 'SET_TIMES', payload: updatedTimes});
+        setDate(event.target.value);
     };
     const handleTimeChange = (event) => setTime(event.target.value);
     const handleGuestsChange = (event) => setGuests(event.target.value);
     const handleOccasionChange = (event) => setOccasion(event.target.value);
 
     return (
-        <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+        <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}}>
             <h3>Book Now</h3>
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={date} onChange={handleDateChange} />
+            <input type="date" id="res-date" value={date} onChange={handleDateChange}/>
 
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" value={time} onChange={handleTimeChange}>
@@ -27,7 +31,8 @@ function BookingForm(props) {
             </select>
 
             <label htmlFor="guests">Number of guests</label>
-            <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={handleGuestsChange} />
+            <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests}
+                   onChange={handleGuestsChange}/>
 
             <label htmlFor="occasion">Occasion</label>
             <select id="occasion" value={occasion} onChange={handleOccasionChange}>
@@ -36,7 +41,7 @@ function BookingForm(props) {
                 <option value="Anniversary">Anniversary</option>
             </select>
 
-            <input type="submit" value="Make Your reservation" />
+            <input type="submit" value="Make Your reservation"/>
         </form>
     );
 }

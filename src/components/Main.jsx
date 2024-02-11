@@ -1,24 +1,28 @@
-import React, {useReducer} from "react";
+import React, {useEffect, useReducer} from "react";
 import { Route, Routes } from "react-router-dom";
 import {HomePage} from "./HomePage";
 import {BookingPage} from "./BookingPage";
+import {initializeTimes} from "../utils/fakeApi";
 
-export const initializeTimes = () => {
-    return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-};
-
-export const updateTimes = (state, action) => {
-    //todo: change time by day
+const timesReducer = (state, action) => {
     switch (action.type) {
-        case 'UPDATE_TIMES':
-            return state.slice(-2);
+        case 'SET_TIMES':
+            return action.payload;
         default:
             return state;
     }
 };
 
 function Main() {
-    const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+    const [availableTimes, dispatch] = useReducer(timesReducer, []);
+
+    useEffect(() => {
+        const init = async () => {
+            const initialTimes = await initializeTimes();
+            dispatch({ type: 'SET_TIMES', payload: initialTimes });
+        };
+        init();
+    }, []);
 
     return (
         <main>
