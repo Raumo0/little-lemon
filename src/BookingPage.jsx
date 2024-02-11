@@ -1,3 +1,10 @@
+import BookingForm from "./BookingForm";
+
+
 export function BookingPage() {
-    return <p>BookingPage</p>;
+    return (
+        <>
+            <BookingForm/>
+        </>
+    );
 }
