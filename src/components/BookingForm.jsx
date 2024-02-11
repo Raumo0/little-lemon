@@ -15,6 +15,7 @@ function BookingForm(props) {
 
     return (
         <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+            <h3>Book Now</h3>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" value={date} onChange={handleDateChange} />
 
