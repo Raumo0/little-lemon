@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 
-function BookingForm() {
-    // State variables for each form field
+function BookingForm(props) {
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState('');
 
-    // State variable for available times
-    const [availableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
-
-    // Handlers for form field changes
-    const handleDateChange = (event) => setDate(event.target.value);
+    const handleDateChange = (event) => {
+        props.dispatch({ type: 'UPDATE_TIMES', payload: event.target.value });
+    };
     const handleTimeChange = (event) => setTime(event.target.value);
     const handleGuestsChange = (event) => setGuests(event.target.value);
     const handleOccasionChange = (event) => setOccasion(event.target.value);
@@ -23,7 +20,7 @@ function BookingForm() {
 
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" value={time} onChange={handleTimeChange}>
-                {availableTimes.map((availableTime) => (
+                {props.availableTimes.map((availableTime) => (
                     <option key={availableTime} value={availableTime}>{availableTime}</option>
                 ))}
             </select>

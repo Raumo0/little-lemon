@@ -1,10 +1,10 @@
 import BookingForm from "./BookingForm";
 
 
-export function BookingPage() {
+export function BookingPage(props) {
     return (
         <>
-            <BookingForm/>
+            <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch}/>
         </>
     );
 }
