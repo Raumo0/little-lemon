@@ -8,17 +8,27 @@ function BookingForm(props) {
     const [occasion, setOccasion] = useState('');
 
     const handleDateChange = async (event) => {
+        setDate(event.target.value);
         const newDate = new Date(event.target.value);
         const updatedTimes = await updateTimes(newDate);
         props.dispatch({type: 'SET_TIMES', payload: updatedTimes});
-        setDate(event.target.value);
     };
     const handleTimeChange = (event) => setTime(event.target.value);
     const handleGuestsChange = (event) => setGuests(event.target.value);
     const handleOccasionChange = (event) => setOccasion(event.target.value);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = {
+            date,
+            time,
+            guests,
+            occasion,
+        };
+        props.submitForm(formData);
+    };
 
     return (
-        <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}}>
+        <form style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={handleSubmit}>
             <h3>Book Now</h3>
             <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" value={date} onChange={handleDateChange}/>
