@@ -66,7 +66,7 @@ describe('BookingForm Client-side Validation', () => {
     test('submit button is disabled when form is invalid', async () => {
         render(<BookingForm availableTimes={['10:00', '11:00']}/>);
         await waitFor(() => {
-            const submitButton = screen.getByDisplayValue(/Make Your reservation/i);
+            const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
             expect(submitButton).toBeDisabled();
         });
     });
@@ -94,9 +94,7 @@ describe('BookingForm Client-side Validation', () => {
         await userEvent.selectOptions(occasionSelect, 'Birthday');
 
         await waitFor(() => {
-            const submitButton = screen.getByDisplayValue(/Make Your reservation/i);
-            console.log(submitButton)
-
+            const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
             expect(submitButton).not.toBeDisabled();
         });
     });

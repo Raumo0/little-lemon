@@ -59,7 +59,7 @@ function BookingForm(props) {
                 <option value="Anniversary">Anniversary</option>
             </select>
 
-            <input type="submit" value="Make Your reservation" disabled={!isFormValid}/>
+            <button type="submit" aria-label="Make Your reservation" disabled={!isFormValid}>Make Your reservation</button>
         </form>
     );
 }
