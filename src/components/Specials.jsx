@@ -1,9 +1,9 @@
 import React from 'react';
 import './Specials.css';
 import SpecialFoodCard from './SpecialFoodCard';
-import pasta from './logo192.png';
-import tiramisu from './logo192.png';
-import risotto from './logo192.png';
+import pasta from '../assets/greek salad.jpg';
+import tiramisu from '../assets/lemon dessert.jpg';
+import risotto from '../assets/restauranfood.jpg';
 
 export function Specials() {
     return (

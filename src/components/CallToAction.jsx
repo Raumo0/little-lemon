@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CallToAction.css';
-import cozyCafeImg from './logo192.png';
+import cozyCafeImg from '../assets/restaurant.jpg';
 
 export function CallToAction() {
     const navigate = useNavigate();

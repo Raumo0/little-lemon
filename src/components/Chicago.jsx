@@ -1,7 +1,7 @@
 import React from 'react';
 import './Chicago.css';
-import BistroImageA from './logo192.png';
-import BistroImageB from './logo192.png';
+import BistroImageA from '../assets/restaurant.jpg';
+import BistroImageB from '../assets/restaurant chef B.jpg';
 
 export function Chicago() {
     return (
