@@ -1,0 +1,51 @@
+.confirmedBookingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+    min-height: 100vh;
+    justify-content: center;
+    background: #efda24;
+}
+
+.bookingHeader h1 {
+    color: #ffffff;
+}
+
+.bookingHeader p {
+    color: #ababab;
+    font-size: 18px;
+}
+
+.bookingDetails {
+    background-color: #EEEEEE;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.bookingDetails h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.bookingDetails p {
+    color: #666;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.homeButton {
+    padding: 10px 20px;
+    background-color: #6ecc17;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.homeButton:hover {
+    background-color: #437e0e;
+}

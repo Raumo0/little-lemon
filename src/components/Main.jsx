@@ -4,6 +4,7 @@ import {HomePage} from "./HomePage";
 import {BookingPage} from "./BookingPage";
 import {initializeTimes, submitAPI} from "../utils/fakeApi";
 import {ConfirmedBooking} from "./ConfirmedBooking";
+import { useLocation } from 'react-router-dom';
 
 const timesReducer = (state, action) => {
     switch (action.type) {
@@ -14,9 +15,24 @@ const timesReducer = (state, action) => {
     }
 };
 
+function useScrollToAnchor() {
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const id = hash.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [hash]);
+}
+
 function Main() {
     const [availableTimes, dispatch] = useReducer(timesReducer, []);
     const navigate = useNavigate();
+    useScrollToAnchor();
 
     useEffect(() => {
         const init = async () => {
