@@ -1,0 +1,39 @@
+.card {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rating {
+    font-size: 18px;
+    color: #FFD700;
+}
+
+.customerInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customerImg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.customerName {
+    font-weight: bold;
+}
+
+.testimonial {
+    font-size: 14px;
+    color: #666;
+    text-align: justify;
+}

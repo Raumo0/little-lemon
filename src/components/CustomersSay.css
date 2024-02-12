@@ -1,0 +1,20 @@
+.customersSayContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+
+.customersSayTitle {
+    text-align: center;
+    color: #333;
+}
+
+.customersSayCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

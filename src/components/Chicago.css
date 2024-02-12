@@ -1,0 +1,52 @@
+.bistroContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    gap: 20px;
+    padding: 20px;
+    background-color: #353535;
+}
+
+@media (max-width: 768px) {
+    .bistroContainer {
+        flex-direction: column;
+    }
+}
+
+.bistroContent {
+    flex: 1;
+}
+
+.bistroContent h1 {
+    color: #FDB147;
+}
+
+.bistroContent h2 {
+    color: #F0A500;
+}
+
+.bistroContent p {
+    max-width: 480px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.bistroImages {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bistroImages img {
+    width: 240px;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .bistroImages {
+        justify-content: center;
+    }
+}

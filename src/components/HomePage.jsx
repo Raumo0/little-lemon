@@ -6,8 +6,8 @@ import {CallToAction} from "./CallToAction";
 export function HomePage() {
     return <>
         <CallToAction/>
-        <Specials/>
-        <CustomersSay/>
-        <Chicago/>
+        <div id="services"><Specials/></div>
+        <div id="contact"><CustomersSay/></div>
+        <div id="about"><Chicago/></div>
     </>;
 }

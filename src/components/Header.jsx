@@ -1,5 +1,6 @@
 import {Component} from "react";
 import {Navigation} from "./Navigation";
+import './Header.css';
 
 export class Header extends Component {
     render() {
