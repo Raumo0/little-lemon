@@ -1,0 +1,36 @@
+.specialsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.specialsTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #e2b24a;
+}
+
+
+.menuButton {
+    padding: 10px 20px;
+    background-color: #f0a500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.specialsTop h1 {
+    text-align: center;
+}
+
+.specialsCards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

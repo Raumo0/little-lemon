@@ -1,0 +1,46 @@
+.foodCard {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.foodImage {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.foodHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foodTitle {
+    font-weight: bold;
+}
+
+.foodPrice {
+    color: #f0a500;
+}
+
+.foodDescription {
+    color: #666;
+    text-align: justify;
+}
+
+.orderButton {
+    padding: 10px;
+    width: 100%;
+    background-color: #f0a500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
